@@ -8,6 +8,7 @@ module.exports = class MenuController {
         name: "mainMenuChoice",
         message: "Please choose from an option below:",
         choices: [
+          "Get Date",
           "Add new contact",
           "Exit"
         ]
@@ -20,6 +21,9 @@ module.exports = class MenuController {
     console.log(`Welcome to AddressBloc!`);
     inquirer.prompt(this.mainMenuQuestions).then((response) => {
       switch(response.mainMenuChoice){
+        case "Get Date":
+          this.getDate();
+          break;
         case "Add new contact":
           this.addContact();
           break;
@@ -37,6 +41,12 @@ module.exports = class MenuController {
 
   clear(){
     console.log('\x1Bc'); //clearing contents of the terminal like running clear in bash
+  }
+
+  getDate(){
+    const today = new Date().toLocaleString();
+    console.log(today);
+    this.main();
   }
 
   addContact(){
