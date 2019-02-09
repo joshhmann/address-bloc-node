@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/joshhmann/address-bloc-node/issues"
   },
-  "homepage": "https://github.com/joshhmann/address-bloc-node#readme"
+  "homepage": "https://github.com/joshhmann/address-bloc-node#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0"
+  }
 }
