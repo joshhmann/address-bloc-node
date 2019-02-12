@@ -1,4 +1,5 @@
 const inquirer = require('inquirer'); //requiring inquirere so we can use it in the class.
+const ContactController = require('./ContactController');
 //define class and export it
 module.exports = class MenuController {
   constructor(){
@@ -13,7 +14,10 @@ module.exports = class MenuController {
         ]
       }
     ];
-    this.contacts = [];
+    //changed property name to book to better respresent what the variable will contain. 
+    //using ContactController object to handle contact related requests.
+    //Ensures MenuController remains responsible for only menu related behavior
+    this.book = new ContactController();
   }
 
   main(){
