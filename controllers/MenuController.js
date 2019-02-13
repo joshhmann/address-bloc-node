@@ -14,7 +14,7 @@ module.exports = class MenuController {
         ]
       }
     ];
-    //changed property name to book to better respresent what the variable will contain. 
+    //changed property name to book to better respresent what the variable will contain.
     //using ContactController object to handle contact related requests.
     //Ensures MenuController remains responsible for only menu related behavior
     this.book = new ContactController();
@@ -45,9 +45,16 @@ module.exports = class MenuController {
 
   addContact(){
     this.clear();
-    console.log('addContact called');
-    this.main();
-  }
+    inquirer.prompt(this.book.addContactQuestions).then((answers) => {
+      this.book.addContact(answers.name, answers.phone).then((contact) => {
+        console.log("Contact was added successfully!");
+        this.main();
+      }).catch((err) => {
+        console.log(err);
+        this.main();
+      });
+    });
+   }
 
   exit(){
     console.log("Thanks for using AddressBloc!");

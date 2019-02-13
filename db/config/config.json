@@ -9,7 +9,7 @@
   "test": {
     "username": "postgres",
     "password": null,
-    "database": "address-bloc-dev",
+    "database": "address-bloc-test",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "logging": false
