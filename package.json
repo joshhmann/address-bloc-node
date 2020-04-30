@@ -4,7 +4,9 @@
   "description": "An application to model an address book in Node",
   "main": "app.js",
   "scripts": {
-    "test": "set NODE_ENV=test && jasmine"
+    "test": "set NODE_ENV=test && jasmine",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,11 @@
   },
   "homepage": "https://github.com/joshhmann/address-bloc-node#readme",
   "dependencies": {
-    "inquirer": "^5.1.0"
+    "inquirer": "^5.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "jasmine": "^3.1.0"
-  }
+  },
+  "snyk": true
 }
